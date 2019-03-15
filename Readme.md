@@ -22,3 +22,7 @@ Then run tests, and finally run your main HelloKt class.
 Once you compiled the sources with previous 'mvn test' command, you can run the application by typing:
 
 	mvn exec:java
+	
+## Setting up before workshop
+
+Import project in IDEA IntelliJ as a Maven project. Once it is set-up, you'll be able to run any entry point (`main` function) or any test using a green triangle on the right to this function or test.  
