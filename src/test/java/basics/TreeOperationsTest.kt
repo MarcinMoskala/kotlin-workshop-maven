@@ -65,7 +65,7 @@ class TreeOperationsTest {
 //
 //    @Test
 //    // Every level in height is one more to the result
-//    fun `Height returns the highest dustance from the root to a leaf`() {
+//    fun `Height returns the highest distance from the root to a leaf`() {
 //        assertEquals(3, tree1.height())
 //        assertEquals(4, tree2.height())
 //        assertEquals(4, tree3.height())
