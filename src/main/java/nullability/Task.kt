@@ -26,18 +26,8 @@ public class MessageUtil {
 }
 */
 fun sendMessageToClient(client: Client?, message: String?, mailer: Mailer) {
-//    when {
-//        message == null -> return
-//        client?.personalInfo?.email == null -> return
-//        else -> mailer.sendMessage(client.personalInfo.email, message)
-//    }
-
-    message ?: return
-    val email = client?.personalInfo?.email ?: return
-    mailer.sendMessage(email, message)
-
-//    val email = client?.personalInfo?.email
-//    if(email != null && message != null) {
-//        mailer.sendMessage(email, message)
-//    }
+    val email = client?.personalInfo?.email
+    if (message != null && email != null) {
+        mailer.sendMessage(email, message)
+    }
 }

@@ -15,7 +15,7 @@ interface Person {
 // TODO: Implement here class Businessman that implements Person
 // TODO: Implement here class Student that implements Person
 
-fun main(args: Array<String>) {
+fun main() {
     val businessman: Person = TODO("Use Businessman constructor here once it is implemented")
     val student: Person = TODO("Use Businessman constructor here once it is implemented")
 

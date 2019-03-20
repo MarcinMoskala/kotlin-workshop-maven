@@ -6,5 +6,15 @@ package basics
 // “Buzz” if number is divisible by 5
 // “FizzBuzz” if number is divisible both by 3 and 5 (by 15)
 fun fizzBuzz(): String {
-    TODO()
+    var text = ""
+    for (i in 1..100) {
+        text += when {
+            i % 15 == 0 -> "FizzBuzz"
+            i % 3 == 0 -> "Fizz"
+            i % 5 == 0 -> "Buzz"
+            else -> i.toString()
+        }
+        if(i != 100) text += ", "
+    }
+    return text
 }
