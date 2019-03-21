@@ -6,10 +6,11 @@ import kotlin.collections.forEach as stdlibForEach
 import kotlin.collections.map as stdlibMap
 import kotlin.collections.filter as stdlibFilter
 
-inline fun <T> Iterable<T>.forEach(operation: (T) -> Unit) {
+inline fun <T> Iterable<T>.onEach(operation: (T) -> Unit): Iterable<T> {
     for (elem in this) {
         operation(elem)
     }
+    return this
 }
 
 inline fun <T, R> Iterable<T>.map(transformation: (T) -> R): List<R> {
@@ -31,12 +32,9 @@ inline fun <T> Iterable<T>.filter(predicate: (T) -> Boolean): List<T> {
 }
 
 fun main(args: Array<String>) {
-    (1..1000).filter { it % 7 == 0 }
-            .map { "$it" }
-            .filter { it.first() == '9' }
-            .forEach { println(it) }
+    print((1..10).map { it * 2 }) // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+    print((1..10).filter { it % 3 == 0 }) // [3, 6, 9]
+    print((1..10).map { it * 2 }.filter { it % 3 == 0 }) // [6, 12, 18]
 
-    (1..100).filter { it % 7 == 0 }
-//            .flatMap { num -> (1..5).map { num + 10 * it } }
-            .forEach { println(it) }
+//    print((1..4).flatMap { listOf(it, it + 10) }) // [1, 11, 2, 12, 3, 13, 4, 14]
 }
