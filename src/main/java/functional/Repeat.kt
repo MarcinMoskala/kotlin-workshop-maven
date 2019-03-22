@@ -1,18 +1,21 @@
 package functional
 
-private fun repeat(times: Int, action: () -> Unit) {
-    TODO()
+fun repeat(times: Int, operation: ()->Unit) {
+    for (i in 1..times) {
+        operation()
+    }
 }
 
-fun main(args: Array<String>) {
-    repeat(5) { print("A") } // AAAAA
+fun loop(operation: ()->Unit) {
+    while (true) operation()
+}
 
-//    var i = 1
-//    loop {
-//        print("A")
-//        i *= 2
-//        if(i > 1000) {
-//            // break
-//        }
-//    }
+fun main() {
+    repeat(10) {
+        print("A")
+    }
+
+    loop {
+        print(".")
+    }
 }

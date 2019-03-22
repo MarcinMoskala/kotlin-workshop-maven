@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertEquals
 
 // TODO: Uncomment below line
-//import kotlin.collections.flatMap as stdlibFlatMap
+import kotlin.collections.flatMap as stdlibFlatMap
 
 class FlatMapTest {
     @Test

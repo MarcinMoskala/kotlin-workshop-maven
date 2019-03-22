@@ -8,6 +8,6 @@ class PizzaTest {
 
     @Test
     fun pizzaCheck() {
-//        assertTrue(Pizza.hawaiian() == Pizza(cheese = 1, pineapple = 1, ham = 1))
+        assertTrue(Pizza.hawaiian() == Pizza(cheese = 1, pineapple = 1, ham = 1))
     }
 }

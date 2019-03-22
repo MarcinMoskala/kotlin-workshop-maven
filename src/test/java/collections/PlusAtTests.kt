@@ -2,6 +2,7 @@ package collections
 
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
+import java.lang.IllegalArgumentException
 
 @Suppress("FunctionName")
 class PlusAtTests {
@@ -20,7 +21,7 @@ class PlusAtTests {
     private fun <T> assertIsThrowingError(f: () -> T) {
         try {
             f()
-        } catch (r: Error) {
+        } catch (r: IllegalArgumentException) {
             return
         }
         assert(false)

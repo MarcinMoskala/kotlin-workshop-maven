@@ -1,5 +1,7 @@
 package nullability
 
+import java.lang.Error
+
 
 class Client(val personalInfo: PersonalInfo?)
 class PersonalInfo(val email: String?)
@@ -26,8 +28,7 @@ public class MessageUtil {
 }
 */
 fun sendMessageToClient(client: Client?, message: String?, mailer: Mailer) {
-    val email = client?.personalInfo?.email
-    if (message != null && email != null) {
-        mailer.sendMessage(email, message)
-    }
+    val email = client?.personalInfo?.email ?: return
+    message ?: return
+    mailer.sendMessage(email, message)
 }
