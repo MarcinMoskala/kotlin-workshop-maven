@@ -1,3 +1,5 @@
+package coroutines
+
 import kotlinx.coroutines.runBlocking
 import java.util.Random
 

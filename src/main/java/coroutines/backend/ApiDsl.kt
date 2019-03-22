@@ -1,4 +1,4 @@
-package backend
+package coroutines.backend
 
 fun api(config: ApiConfig.()->Unit) = ApiConfig().also(config)
 
@@ -18,11 +18,11 @@ class ApiConfig {
     }
 
     fun start() {
-        publicHandles += handles
+        publicHandles = publicHandles + handles
     }
 
     private fun addHandle(method: String, path: String, handle: suspend (body: Any?)->Any) {
-        handles += Endpoint(method, path) to handle
+        handles = handles + (Endpoint(method, path) to handle)
     }
 }
 
