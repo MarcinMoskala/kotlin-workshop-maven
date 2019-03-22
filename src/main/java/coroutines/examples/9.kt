@@ -1,15 +1,12 @@
 package coroutines.examples
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 import java.util.*
 
-suspend fun makeAsyncCalculations(): String {
-    val one = GlobalScope.async { doSomethingUsefulOne() }
-    val two = GlobalScope.async { doSomethingUsefulTwo() }
-    return "The answer is ${one.await() + two.await()}"
+suspend fun makeAsyncCalculations(): String = coroutineScope {
+    val one = async { doSomethingUsefulOne() }
+    val two = async { doSomethingUsefulTwo() }
+    "The answer is ${one.await() + two.await()}"
 }
 
 suspend fun doSomethingUsefulOne(): Int {

@@ -16,5 +16,5 @@ fun main() = runBlocking(CoroutineName("main")) {
         log("Computing v2")
         6
     }
-    log("The answer for v1 = ${v1.await()}")
+    log("The answer for v1 = ${v1.await()}, v2 = ${v2.await()}")
 }
